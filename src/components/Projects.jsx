@@ -8,9 +8,13 @@ import {
 import { useRef, useState } from "react";
 import "../App.css";
 import EasyShareCard from "./Cards/EasyShareCard";
+import JavaAppCard from "./Cards/JavaAppCard";
 
 function Projects() {
+  const [bgForCard, setBgForCard] = useState();
   const [showCard, setShowCard] = useState(false);
+  const [cardName, setCardName] = useState("");
+
   const ref = useRef(null);
   const { scrollY } = useScroll();
 
@@ -23,9 +27,17 @@ function Projects() {
     console.log(val);
   });
 
-  function ShowBigCard(){
-    setShowCard(true);
+  function ShowBigCard(card) {
+    if (card === "EasyShare") {
+      setShowCard(true);
+      setCardName(card);
+    }
+    if (card === "JavaApp") {
+      setShowCard(true);
+      setCardName(card);
+    }
   }
+
 
   const scale1 = useTransform(scrollY, [900, 1400], [0.01, 1]);
   const scale3 = useTransform(scrollY, [1100, 1400], [0.01, 1]);
@@ -40,6 +52,7 @@ function Projects() {
           rounded-lg bg-zinc-600/80 text-white cardBorder cursor-pointer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => ShowBigCard(props.title)}
         >
           <div className="w-full h-30 flex justify-center">
             <img className="w-[80%] h-25 rounded mt-3" src={props.projectPic} />
@@ -63,22 +76,22 @@ function Projects() {
         style={{
           opacity: scrollYProgress,
         }}
-        className="text-4xl p-4 text-center font-bold italic underline decoration-gray-100/90 decoration-4"
+        className="text-4xl p-4 text-center font-bold italic underline decoration-gray-100/90 decoration-4 h-[10%]"
       >
         <p>Projects</p>
       </motion.div>
 
-      <div className="grid grid-cols-4 p-12 gap-4">
+      <div className="grid grid-cols-4 p-12 gap-4 relative h-[70%]">
 
-      {showCard ? <EasyShareCard /> : {}}
+        {showCard && cardName === "EasyShare" ? <EasyShareCard onClick={() => setShowCard(false)}/> : null}
+        {showCard && cardName === "JavaApp" ? <JavaAppCard onClick={() => setShowCard(false)}/> : null}
 
-        {/** First project card */}
+        {/** 1 project card */}
         <motion.div
           ref={ref}
           style={{
-            scale: scale1,
+            scale: showCard ? 1 : scale1,
           }}
-          onClick={ShowBigCard}
         >
           <div className="col-start-1 col-span-1 flex justify-center items-center">
             <Card
@@ -90,27 +103,26 @@ function Projects() {
           </div>
         </motion.div>
 
-        {/** Second project card */}
+        {/** 2 project card */}
         <motion.div
           ref={ref}
           style={{
-            scale: scale2,
+            scale: showCard ? 1 : scale2,
           }}
-          onClick={ShowBigCard}
         >
           <div className="col-start-1 col-span-1 flex justify-center items-center">
             <Card
-              title="Java grej"
+              title="JavaApp"
               projectPic="../src/assets/StartScreenES.png"
             />
           </div>
         </motion.div>
 
-        {/** Third project card */}
+        {/** 3 project card */}
         <motion.div
           ref={ref}
           style={{
-            scale: scale3,
+            scale: showCard ? 1 : scale3,
           }}
         >
           <div className="col-start-1 col-span-1 flex justify-center items-center">
@@ -121,11 +133,11 @@ function Projects() {
           </div>
         </motion.div>
 
-        {/** Third project card */}
+        {/** 4 project card */}
         <motion.div
           ref={ref}
           style={{
-            scale: scale4,
+            scale: showCard ? 1 : scale4,
           }}
         >
           <div className="col-start-1 col-span-1 flex justify-center items-center">
@@ -137,7 +149,7 @@ function Projects() {
         </motion.div>
       </div>
       {/** Banner for skills */}
-      <div className="grid grid-cols-1">
+      <div className="grid grid-cols-1 h-[20%]">
         <div className="flex justify-center items-center">
           <div className="flex items-center"> asd</div>
         </div>
