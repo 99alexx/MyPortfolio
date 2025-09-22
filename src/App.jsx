@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Projects from "./components/projects";
+import Projects from "./components/Projects";
 import Info from "./components/Info";
 import StartPage from "./components/StartPage";
 

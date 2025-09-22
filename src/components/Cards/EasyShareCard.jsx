@@ -10,13 +10,13 @@ function EasyShareCard({ onClick }) {
   return (
     <>
       <div
-        className="flex justify-center items-center absolute inset-0 bg-black/30"
+        className="flex justify-center items-center absolute inset-0 bg-black/40"
         onClick={onClick}
       >
         <motion.div
           animate={{ pathLength: 1 }}
           transition={{ duration: 2, type: "tween" }}
-          className="w-[30%] h-[100%] bg-zinc-700 border border-black rounded-2xl p-4"
+          className="w-[30%] h-[100%] bg-black/90 border border-white/70 rounded-2xl p-4"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="grid grid-cols-2 auto-rows-auto h-auto text-xs gap-y-4">
@@ -49,17 +49,17 @@ function EasyShareCard({ onClick }) {
                 <li>Git/Github</li>
               </ul>
             </div>
-            <div className="grid auto-rows-auto col-start-1 col-span-2 pt-5 space-y-2">
-              <a className="underline text-center" href="https://EasyShare.se">
+            <div className="grid auto-rows-auto col-start-1 col-span-2 space-y-2">
+              <a className="underline text-lg" href="https://EasyShare.se">
                 www.EasyShare.se
               </a>
-              <div className="flex justify-center items-center">
+              <div className="flex items-center">
                 <img
                   className="h-6 w-6"
                   src="../src/assets/github-mark-white.png"
                 />
                 <a
-                  className="underline"
+                  className="underline text-lg"
                   href="https://github.com/99alexx/EasyShareReadme"
                 >
                   ReadMe

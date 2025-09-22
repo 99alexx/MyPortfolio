@@ -55,20 +55,20 @@ function Projects() {
     return (
       <>
         <motion.div
-          className="grid auto-rows-auto h-90 w-[70%] border border-zinc-700 border-2 
-          rounded-lg bg-zinc-700 text-white cardBorder cursor-pointer"
+          className="grid auto-rows-auto h-90 w-[70%] border border-white/70 border-2 
+          rounded-lg text-white cardBorder cursor-pointer p-2"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => ShowBigCard(props.title)}
         >
           <div className="w-full h-30 flex justify-center">
-            <img className="w-[90%] h-30 rounded mt-3" src={props.projectPic} />
+            <img className="w-full h-30 rounded" src={props.projectPic} />
           </div>
           <p className="text-2xl font-semibold flex justify-center">
             {props.title}
           </p>
           <p className="text-sm">{props.text}</p>
-          <div className="rounded-lg flex justify-end items-end p-2">
+          <div className="rounded-lg flex justify-end items-end">
             <img className="w-6 h-6 flex" src="../src/assets/tap.png" />
           </div>
         </motion.div>
@@ -82,6 +82,7 @@ function Projects() {
         ref={ref}
         style={{
           opacity: scrollYProgress,
+          backgroundColor: showCard ? "rgba(0,0,0,40)" : null
         }}
         className="text-4xl p-4 text-center font-bold italic underline decoration-gray-100/90 decoration-4 h-[10%]"
       >
@@ -157,7 +158,7 @@ function Projects() {
         </motion.div>
       </div>
       {/** Infinite scroll */}
-      <div className="grid grid-cols-1 h-[20%]">
+      <div className={`grid grid-cols-1 h-[20%] ${showCard ? "bg-black/40" : ""}`}>
             <InfiniteScroll />
       </div>
     </>

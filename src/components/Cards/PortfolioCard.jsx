@@ -10,13 +10,13 @@ function EasyShareCard({ onClick }) {
   return (
     <>
       <div
-        className="flex justify-center items-center absolute inset-0 bg-black/30"
+        className="flex justify-center items-center absolute inset-0 bg-black/40"
         onClick={onClick}
       >
         <motion.div
           animate={{ pathLength: 1 }}
           transition={{ duration: 2, type: "tween" }}
-          className="w-[30%] h-[100%] bg-zinc-700 border border-black rounded-2xl p-4"
+          className="w-[30%] h-[100%] bg-black/90 border border-white/70 rounded-2xl p-4"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="grid grid-cols-2 auto-rows-auto h-auto text-xs gap-y-4">
