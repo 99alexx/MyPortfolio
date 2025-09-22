@@ -25,7 +25,7 @@ function EasyShareCard({ onClick }) {
               src="../src/assets/EasyShare.png"
             />
             <div className="col-start-1 col-span-1 flex flex-col">
-              <p className="text-xl pb-2 font-semibold">EasyShare</p>
+              <p className="text-xl pb-2 font-semibold">This Website</p>
               <p>
                 This project was created because I wanted to be able to easily
                 share files (currently up to 100MB) with my friends. <br /> The

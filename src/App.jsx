@@ -20,7 +20,7 @@ function App() {
           <StartPage />
         </div>
 
-        <div className="h-screen snap-start">
+        <div className="h-screen">
           <div className="stars"></div>
           <Info />
         </div>

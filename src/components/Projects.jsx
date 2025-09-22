@@ -9,6 +9,9 @@ import { useRef, useState } from "react";
 import "../App.css";
 import EasyShareCard from "./Cards/EasyShareCard";
 import JavaAppCard from "./Cards/JavaAppCard";
+import PortfolioCard from "./Cards/PortfolioCard";
+import InfiniteScroll from "./InfiniteScroll";
+
 
 function Projects() {
   const [bgForCard, setBgForCard] = useState();
@@ -36,6 +39,10 @@ function Projects() {
       setShowCard(true);
       setCardName(card);
     }
+    if (card === "Portfolio Site"){
+      setShowCard(true);
+      setCardName(card);
+    }
   }
 
 
@@ -49,20 +56,20 @@ function Projects() {
       <>
         <motion.div
           className="grid auto-rows-auto h-90 w-[70%] border border-zinc-700 border-2 
-          rounded-lg bg-zinc-600/80 text-white cardBorder cursor-pointer"
-          whileHover={{ scale: 1.05 }}
+          rounded-lg bg-zinc-700 text-white cardBorder cursor-pointer"
+          whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => ShowBigCard(props.title)}
         >
           <div className="w-full h-30 flex justify-center">
-            <img className="w-[80%] h-25 rounded mt-3" src={props.projectPic} />
+            <img className="w-[90%] h-30 rounded mt-3" src={props.projectPic} />
           </div>
           <p className="text-2xl font-semibold flex justify-center">
             {props.title}
           </p>
-          <p className="text-sm flex text-center">{props.text}</p>
+          <p className="text-sm">{props.text}</p>
           <div className="rounded-lg flex justify-end items-end p-2">
-            <img className="w-5 h-5 flex" src="../src/assets/tap.png" />
+            <img className="w-6 h-6 flex" src="../src/assets/tap.png" />
           </div>
         </motion.div>
       </>
@@ -85,25 +92,26 @@ function Projects() {
 
         {showCard && cardName === "EasyShare" ? <EasyShareCard onClick={() => setShowCard(false)}/> : null}
         {showCard && cardName === "JavaApp" ? <JavaAppCard onClick={() => setShowCard(false)}/> : null}
+        {showCard && cardName === "Portfolio Site" ? <PortfolioCard onClick={() => setShowCard(false)}/> : null}
 
-        {/** 1 project card */}
+        {/** 1 EasyShare */}
         <motion.div
           ref={ref}
           style={{
             scale: showCard ? 1 : scale1,
           }}
         >
-          <div className="col-start-1 col-span-1 flex justify-center items-center">
+          <div className="col-start-1 col-span-1 flex justify-center">
             <Card
               title="EasyShare"
               bigCardProjectPic="../src/assets/EasyShare.png"
               projectPic="../src/assets/StartScreenES.png"
-              text="asdasdsad ad asd asd ad sad asd asd asd asasd asd ad asd asd as"
+              text="EasyShare is a website built to easily share files, hosted on a Raspberry Pi 5"
             />
           </div>
         </motion.div>
 
-        {/** 2 project card */}
+        {/** 2 JavaApp */}
         <motion.div
           ref={ref}
           style={{
@@ -118,7 +126,7 @@ function Projects() {
           </div>
         </motion.div>
 
-        {/** 3 project card */}
+        {/** 3 Portfolio website */}
         <motion.div
           ref={ref}
           style={{
@@ -127,8 +135,8 @@ function Projects() {
         >
           <div className="col-start-1 col-span-1 flex justify-center items-center">
             <Card
-              title="Android"
-              projectPic="../src/assets/StartScreenES.png"
+              title="Portfolio Site"
+              projectPic="../src/assets/Portfolio.png"
             />
           </div>
         </motion.div>
@@ -148,11 +156,9 @@ function Projects() {
           </div>
         </motion.div>
       </div>
-      {/** Banner for skills */}
+      {/** Infinite scroll */}
       <div className="grid grid-cols-1 h-[20%]">
-        <div className="flex justify-center items-center">
-          <div className="flex items-center"> asd</div>
-        </div>
+            <InfiniteScroll />
       </div>
     </>
   );
