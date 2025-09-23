@@ -1,3 +1,5 @@
+import scrollDownIcon from "../assets/chevron.png";
+
 import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 
@@ -11,18 +13,18 @@ function StartPage() {
   });
 
   return (
-    <div className="grid grid-cols-3 flex h-screen font-semibold">
-      <div className="flex flex-col col-start-2 col-span-1 mt-[50%] text-3xl">
-        <div className="w-full pb-4">&lt;Alexander Karlsson</div>
-        <div className="w-full text-5xl text-end">Portfolio /&gt;</div>
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 flex h-screen font-semibold p-8 lg:p-0">
+      <div className="flex flex-col justify-end md:justify-start md:col-start-2 col-span-1 md:mt-[50%]">
+        <div className="w-full text-2xl lg:text-3xl pb-4">&lt;Alexander Karlsson</div>
+        <div className="w-full text-4xl lg:text-5xl text-end">Portfolio /&gt;</div>
       </div>
-      <div className="col-start-2 col-span-1 flex justify-center items-end">
+      <div className="md:col-start-2 col-span-1 flex justify-center items-end">
         <motion.img 
         ref={ref}
         style={{
           opacity: scrollYProgress,
         }}
-        className="h-8 w-8 mb-5 animate-bounce" src="src/assets/chevron.png" />
+        className="h-8 w-8 mb-5 animate-bounce" src={scrollDownIcon}/>
       </div>
     </div>
   );

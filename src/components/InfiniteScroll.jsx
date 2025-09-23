@@ -1,69 +1,35 @@
+import githubLogo from "../assets/infiniteScroll/github-mark-white.png";
+import cloudflareLogo from "../assets/infiniteScroll/cloudflare.png";
+import cssLogo from "../assets/infiniteScroll/css.png";
+import htmlLogo from "../assets/infiniteScroll/html.png";
+import javaLogo from "../assets/infiniteScroll/java.png";
+import jsLogo from "../assets/infiniteScroll/js.png";
+import linuxLogo from "../assets/infiniteScroll/linux.png";
+import nodeLogo from "../assets/infiniteScroll/node.png";
+import reactLogo from "../assets/infiniteScroll/react.png";
+import tailwindLogo from "../assets/infiniteScroll/tailwindcss.png";
+import viteLogo from "../assets/infiniteScroll/vite.png";
+import photoshopLogo from "../assets/infiniteScroll/ps.png";
+import androidLogo from "../assets/infiniteScroll/android.png";
+
 import { useState, useEffect } from "react";
 
 function InfiniteScroll() {
   const logos = [
-    {
-      name: "Github",
-      alt: "Github logo",
-      src: "src/assets/infiniteScroll/github-mark-white.png",
-    },
-    {
-      name: "CloudFlare",
-      alt: "CloudFlare logo",
-      src: "src/assets/infiniteScroll/cloudflare.png",
-    },
-    { name: "CSS", alt: "CSS logo", src: "src/assets/infiniteScroll/css.png" },
-    {
-      name: "HTML",
-      alt: "HTML logo",
-      src: "src/assets/infiniteScroll/html.png",
-    },
-    {
-      name: "Java",
-      alt: "Java logo",
-      src: "src/assets/infiniteScroll/java.png",
-    },
-    {
-      name: "JavaScript",
-      alt: "JavaScript logo",
-      src: "src/assets/infiniteScroll/js.png",
-    },
-    {
-      name: "Linux",
-      alt: "Linux logo",
-      src: "src/assets/infiniteScroll/linux.png",
-    },
-    {
-      name: "Node.js",
-      alt: "Node.js logo",
-      src: "src/assets/infiniteScroll/node.png",
-    },
-    {
-      name: "React",
-      alt: "React logo",
-      src: "src/assets/infiniteScroll/react.png",
-    },
-    {
-      name: "Tailwindcss",
-      alt: "Tailwindcss logo",
-      src: "src/assets/infiniteScroll/tailwindcss.png",
-    },
-    {
-      name: "Vite",
-      alt: "Vite logo",
-      src: "src/assets/infiniteScroll/vite.png",
-    },
-    {
-      name: "Photoshop",
-      alt: "Photoshop logo",
-      src: "src/assets/infiniteScroll/ps.png",
-    },
-    {
-      name: "Android",
-      alt: "Android logo",
-      src: "src/assets/infiniteScroll/android.png",
-    },
-  ];
+  { name: "Github", alt: "Github logo", src: githubLogo },
+  { name: "CloudFlare", alt: "CloudFlare logo", src: cloudflareLogo },
+  { name: "CSS", alt: "CSS logo", src: cssLogo },
+  { name: "HTML", alt: "HTML logo", src: htmlLogo },
+  { name: "Java", alt: "Java logo", src: javaLogo },
+  { name: "JavaScript", alt: "JavaScript logo", src: jsLogo },
+  { name: "Linux", alt: "Linux logo", src: linuxLogo },
+  { name: "Node.js", alt: "Node.js logo", src: nodeLogo },
+  { name: "React", alt: "React logo", src: reactLogo },
+  { name: "Tailwindcss", alt: "Tailwindcss logo", src: tailwindLogo },
+  { name: "Vite", alt: "Vite logo", src: viteLogo },
+  { name: "Photoshop", alt: "Photoshop logo", src: photoshopLogo },
+  { name: "Android", alt: "Android logo", src: androidLogo },
+];
 
   {
     /**Code taken from https://cruip.com/create-an-infinite-horizontal-scroll-animation-with-tailwind-css/ */
