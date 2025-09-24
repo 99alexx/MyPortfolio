@@ -18,7 +18,7 @@ function StartPage() {
         <div className="w-full text-2xl lg:text-3xl pb-4">&lt;Alexander Karlsson</div>
         <div className="w-full text-4xl lg:text-5xl text-end">Portfolio /&gt;</div>
       </div>
-      <div className="md:col-start-2 col-span-1 flex justify-center items-end">
+      <div className="md:col-start-2 col-span-1 flex justify-center items-end lg:hidden">
         <motion.img 
         ref={ref}
         style={{

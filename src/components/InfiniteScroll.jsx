@@ -16,20 +16,20 @@ import { useState, useEffect } from "react";
 
 function InfiniteScroll() {
   const logos = [
-  { name: "Github", alt: "Github logo", src: githubLogo },
-  { name: "CloudFlare", alt: "CloudFlare logo", src: cloudflareLogo },
-  { name: "CSS", alt: "CSS logo", src: cssLogo },
-  { name: "HTML", alt: "HTML logo", src: htmlLogo },
-  { name: "Java", alt: "Java logo", src: javaLogo },
-  { name: "JavaScript", alt: "JavaScript logo", src: jsLogo },
-  { name: "Linux", alt: "Linux logo", src: linuxLogo },
-  { name: "Node.js", alt: "Node.js logo", src: nodeLogo },
-  { name: "React", alt: "React logo", src: reactLogo },
-  { name: "Tailwindcss", alt: "Tailwindcss logo", src: tailwindLogo },
-  { name: "Vite", alt: "Vite logo", src: viteLogo },
-  { name: "Photoshop", alt: "Photoshop logo", src: photoshopLogo },
-  { name: "Android", alt: "Android logo", src: androidLogo },
-];
+    { name: "Github", alt: "Github logo", src: githubLogo },
+    { name: "CloudFlare", alt: "CloudFlare logo", src: cloudflareLogo },
+    { name: "CSS", alt: "CSS logo", src: cssLogo },
+    { name: "HTML", alt: "HTML logo", src: htmlLogo },
+    { name: "Java", alt: "Java logo", src: javaLogo },
+    { name: "JavaScript", alt: "JavaScript logo", src: jsLogo },
+    { name: "Linux", alt: "Linux logo", src: linuxLogo },
+    { name: "Node.js", alt: "Node.js logo", src: nodeLogo },
+    { name: "React", alt: "React logo", src: reactLogo },
+    { name: "Tailwindcss", alt: "Tailwindcss logo", src: tailwindLogo },
+    { name: "Vite", alt: "Vite logo", src: viteLogo },
+    { name: "Photoshop", alt: "Photoshop logo", src: photoshopLogo },
+    { name: "Android", alt: "Android logo", src: androidLogo },
+  ];
 
   {
     /**Code taken from https://cruip.com/create-an-infinite-horizontal-scroll-animation-with-tailwind-css/ */

@@ -1,37 +1,33 @@
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  useMotionValueEvent,
-} from "framer-motion";
+import { motion } from "framer-motion";
 
-function EasyShareCard({ onClick }) {
+import githubLogo from "/src/assets/github-mark-white.png";
+import PortfolioLogo from "/src/assets/Portfolio.png";
+
+function PortfolioCard({ onClick }) {
   return (
     <>
       <div
-        className="flex justify-center items-center absolute inset-0 bg-black/40"
+        className="flex justify-center items-center absolute inset-0 bg-black/40 mb-0"
         onClick={onClick}
       >
         <motion.div
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 2, type: "tween" }}
-          className="w-[30%] h-[100%] bg-black/90 border border-white/70 rounded-2xl p-4"
+          className="w-[90%] md:w-[60%] lg:w-[30%] bg-black border border-white/70 rounded-2xl p-4"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="grid grid-cols-2 auto-rows-auto h-auto text-xs gap-y-4">
+          <div className="grid grid-cols-2 auto-rows-auto h-auto text-sm gap-y-2 lg:gap-y-4">
             <img
               className="rounded-lg col-start-1 col-span-2"
-              src="../src/assets/EasyShare.png"
+              src={PortfolioLogo}
             />
             <div className="col-start-1 col-span-1 flex flex-col">
-              <p className="text-xl pb-2 font-semibold">This Website</p>
+              <p className="text-sm lg:text-xl lg:pb-2 font-semibold">
+                Portfolio
+              </p>
               <p>
-                This project was created because I wanted to be able to easily
-                share files (currently up to 100MB) with my friends. <br /> The
-                server is hosted from a Raspberry Pi 5. Self hosting is a
-                challenge but a lot of fun and was a good learning experience.{" "}
-                <br /> <br /> Give it a try!
+                This is a front-end heavy project created to showcase my other
+                projects I've worked and/or working on. It serves mainly as a complement to my CV.
+
+
               </p>
             </div>
 
@@ -42,28 +38,27 @@ function EasyShareCard({ onClick }) {
                 </p>
                 <li>React/Vite</li>
                 <li>Tailwindcss</li>
-                <li>Node.js (Express)</li>
-                <li>Linux(Debian)</li>
-                <li>Raspberry Pi 5</li>
-                <li>Claudflare(Tunnel)</li>
+                <li>Web Hosting</li>
                 <li>Git/Github</li>
               </ul>
             </div>
-            <div className="grid auto-rows-auto col-start-1 col-span-2 space-y-2">
-              <a className="underline text-lg" href="https://EasyShare.se">
-                www.EasyShare.se
+            <div className="grid auto-rows-auto col-start-1 col-span-2 space-y-2 lg:text-sm underline">
+              <a target="_blank" href="https://alexanderkarlssonportfolio.se">
+                www.AlexanderKarlssonPortfolio.se
               </a>
-              <div className="flex items-center">
-                <img
-                  className="h-6 w-6"
-                  src="../src/assets/github-mark-white.png"
-                />
-                <a
-                  className="underline text-lg"
-                  href="https://github.com/99alexx/EasyShareReadme"
-                >
-                  ReadMe
-                </a>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <img className="h-4 lg:h-6" src={githubLogo} />
+                  <a
+                    target="_blank"
+                    href="https://github.com/99alexx/MyPortfolio"
+                  >
+                    Repo
+                  </a>
+                </div>
+                <p className="cursor-pointer" onClick={onClick}>
+                  Close
+                </p>
               </div>
             </div>
           </div>
@@ -72,4 +67,4 @@ function EasyShareCard({ onClick }) {
     </>
   );
 }
-export default EasyShareCard;
+export default PortfolioCard;
