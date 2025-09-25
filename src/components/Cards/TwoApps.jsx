@@ -1,11 +1,9 @@
-import {
-  motion
-} from "framer-motion";
+import { motion } from "framer-motion";
 
 import githubLogo from "/src/assets/github-mark-white.png";
-import EasyShareLogo from "/src/assets/EasyShare.png";
+import twoAppsLogo from "/src/assets/TwoApps.png";
 
-function EasyShareCard({ onClick }) {
+function TwoApps({ onClick }) {
   return (
     <>
       <div
@@ -19,19 +17,18 @@ function EasyShareCard({ onClick }) {
           <div className="grid grid-cols-2 auto-rows-auto h-auto text-sm gap-y-2 lg:gap-y-4">
             <img
               className="rounded-lg col-start-1 col-span-2"
-              src={EasyShareLogo}
+              src={twoAppsLogo}
             />
             <div className="col-start-1 col-span-1 flex flex-col">
               <p className="text-sm lg:text-xl lg:pb-2 font-semibold">
-                EasyShare
+                SmartMat & GuessWord Game
               </p>
               <p>
-                This project was created because I wanted to be able to easily
-                share files (currently up to 100MB) with my friends. <br /> The
-                server is hosted on a Raspberry Pi 5. Although self-hosting is
-                not the most optimal these days, it was a fun challange and a
-                good learning experience.
-                <br /> <br /> Give it a try!
+                Two Android applications created in an application course at
+                University. <span className="font-bold">SmartMat</span> is a application which fetch product-data
+                from an API. Users can press buy and the product is put into the
+                cart and easily remove if needed.<br/> <span className="font-bold">WordGame</span> is pretty self explanatory, 
+                the player tries to guess a random word and has up to seven incorrect attempts before the game is over.
               </p>
             </div>
 
@@ -40,30 +37,19 @@ function EasyShareCard({ onClick }) {
                 <p className="text-sm underline decoration-gray-100/90 decoration-1 font-semibold">
                   Built with:
                 </p>
-                <li>React/Vite</li>
-                <li>Tailwindcss</li>
-                <li>Node.js</li>
-                <li>Linux(Debian)</li>
-                <li>Raspberry Pi 5</li>
-                <li>Claudflare</li>
+                <li>Java</li>
+                <li>Android Studio</li>
+                <li>Gradle</li>
+                <li>XML (Layouts)</li>
+                <li>Android Emulator</li>
+                <li>JSON API</li>
                 <li>Git/Github</li>
               </ul>
             </div>
             <div className="grid auto-rows-auto col-start-1 col-span-2 space-y-2 lg:text-sm underline">
-              <a target="_blank" href="https://EasyShare.se">
-                www.EasyShare.se
-              </a>
               <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <img className="h-4 lg:h-6" src={githubLogo} />
-                  <a
-                    target="_blank"
-                    href="https://github.com/99alexx/EasyShareReadme"
-                  >
-                    ReadMe
-                  </a>
-                </div>
-                <p className="cursor-pointer" onClick={onClick}>
+                <div className="flex items-center"></div>
+                <p className="cursor-pointer z-100" onClick={onClick}>
                   Close
                 </p>
               </div>
@@ -74,4 +60,4 @@ function EasyShareCard({ onClick }) {
     </>
   );
 }
-export default EasyShareCard;
+export default TwoApps;

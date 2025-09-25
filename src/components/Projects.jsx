@@ -3,10 +3,11 @@ import { useRef, useState } from "react";
 import "../App.css";
 import { useMediaQuery } from "react-responsive";
 import EasyShareCard from "./Cards/EasyShareCard";
-import JavaAppCard from "./Cards/JavaAppCard";
 import PortfolioCard from "./Cards/PortfolioCard";
+import TwoApps from "./Cards/TwoApps";
 
 import tapLogo from "../assets/tap.png";
+import twoAppsLogo from "../assets/TwoApps.png";
 import portfolioLogo from "../assets/Portfolio.png";
 import StartScreenES from "../assets/StartScreenES.png";
 import scrollDownIcon from "../assets/chevron.png";
@@ -16,6 +17,7 @@ function Projects() {
   const [cardName, setCardName] = useState("");
 
   const ref = useRef(null);
+  const refHeader = useRef(null);
   const refBottom = useRef(null);
   const { scrollY } = useScroll();
 
@@ -24,9 +26,9 @@ function Projects() {
     offset: ["start 0%", "start 200%"],
   });
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 110%", "start 20%"],
+  const { scrollYProgress : headerScroll} = useScroll({
+    target: refHeader,
+    offset: ["start 90%", "start 20%"],
   });
 
   function ShowBigCard(card) {
@@ -34,7 +36,7 @@ function Projects() {
       setShowCard(true);
       setCardName(card);
     }
-    if (card === "JavaApp") {
+    if (card === "Android Apps") {
       setShowCard(true);
       setCardName(card);
     }
@@ -48,8 +50,8 @@ function Projects() {
   const isMedium = useMediaQuery({ query: "(min-width: 768px)" });
 
   const scale1 = useTransform(scrollY, [900, 1400], [0.01, 1]);
-  const scale3 = useTransform(scrollY, [1100, 1400], [0.01, 1]);
-  const scale4 = useTransform(scrollY, [1300, 1400], [0.01, 1]);
+  const scale3 = useTransform(scrollY, [1300, 1400], [0.01, 1]);
+  const scale4 = useTransform(scrollY, [1100, 1400], [0.01, 1]);
   const scale2 = useTransform(scrollY, [1200, 1400], [0.01, 1]);
 
   function Card(props) {
@@ -116,9 +118,9 @@ function Projects() {
   return (
     <>
       <motion.div
-        ref={ref}
+        ref={refHeader}
         style={{
-          opacity: scrollYProgress,
+          opacity: headerScroll,
           backgroundColor: showCard ? "rgba(0,0,0,0.40)" : null,
         }}
         className="text-2xl lg:mt-0 lg:text-4xl p-4 text-center font-bold italic underline decoration-gray-100/90 decoration-2 lg:decoration-4"
@@ -130,11 +132,14 @@ function Projects() {
         {showCard && cardName === "EasyShare" ? (
           <EasyShareCard onClick={() => setShowCard(false)} />
         ) : null}
-        {showCard && cardName === "JavaApp" ? (
-          <JavaAppCard onClick={() => setShowCard(false)} />
+        {showCard && cardName === "Android Apps" ? (
+          <TwoApps onClick={() => setShowCard(false)} />
         ) : null}
         {showCard && cardName === "Portfolio Site" ? (
           <PortfolioCard onClick={() => setShowCard(false)} />
+        ) : null}
+        {showCard && cardName === "Coming Soon..." ? (
+          setShowCard(false)
         ) : null}
 
         {/** 1 EasyShare */}
@@ -148,7 +153,7 @@ function Projects() {
             <Card
               title="EasyShare"
               projectPic={StartScreenES}
-              text="EasyShare is a website built to easily share files, hosted on a Raspberry Pi 5"
+              text="EasyShare is a website built to easily share files, hosted on a Raspberry Pi 5."
             />
           </div>
         </motion.div>
@@ -164,12 +169,12 @@ function Projects() {
             <Card 
               title="Portfolio Site" 
               projectPic={portfolioLogo} 
-              text="This site you are currently on, created as a fun complement to my CV"
+              text="This project is the site you are currently on, created as a complement to my CV."
             />
           </div>
         </motion.div>
 
-        {/** 3 JavaApp */}
+        {/** 3 SmartMat */}
         <motion.div
           ref={ref}
           style={{
@@ -177,7 +182,11 @@ function Projects() {
           }}
         >
           <div className="col-start-1 col-span-1 flex justify-center items-center h-[100%]">
-            <Card title="JavaApp" />
+            <Card 
+            title="Android Apps"
+            projectPic={twoAppsLogo}
+            text="Two simple android application. SmartMat and WordGame, made in I created in University"
+            />
           </div>
         </motion.div>
 
@@ -189,9 +198,13 @@ function Projects() {
           }}
         >
           <div className="col-start-1 col-span-1 flex justify-center items-center h-[100%]">
-            <Card title="EasyShare" />
+            <Card 
+            title="Coming Soon..." 
+            />
           </div>
         </motion.div>
+
+
       </div>
       {showCard ? null : (
         <div className="md:col-start-2 col-span-1 flex justify-center items-end lg:hidden">

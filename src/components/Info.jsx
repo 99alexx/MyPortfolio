@@ -5,11 +5,11 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { useRef } from "react";
 
 function Info() {
-  const refTop = useRef(null);
+  const refHeader = useRef(null);
   const refBottom = useRef(null);
 
   const { scrollYProgress: header } = useScroll({
-    target: refTop,
+    target: refHeader,
     offset: ["start 90%", "start 20%"],
   });
 
@@ -21,7 +21,7 @@ function Info() {
   return (
     <>
       <motion.div
-        ref={refTop}
+        ref={refHeader}
         style={{
           opacity: header,
         }}

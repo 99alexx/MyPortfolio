@@ -66,8 +66,8 @@ function Contact() {
             <div className="mt-4 pt-4 flex flex-cols justify-start border-t border-white">
               <div className="space-y-4">
                 <p className="text-sm">
-                  Check out my Bachelor thesis about AI, websites and
-                  usability (Only available in Swedish).
+                  Check out my Bachelor thesis about GenAI, Websites and
+                  Usability (Only available in Swedish).
                 </p>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
