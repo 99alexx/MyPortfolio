@@ -57,7 +57,7 @@ function Contact() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="border border-white/70 rounded p-2 cursor-pointer "
-                download
+                download="AlexanderKarlsson_CV"
                 href={CV}
               >
                 Download CV

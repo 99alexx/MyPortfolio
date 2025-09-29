@@ -65,8 +65,8 @@ body {
   position: absolute;
   width: 20px;
   height: 1px;
-  background: linear-gradient(90deg, white, transparent);
-  animation: shoot 3s infinite ease-in;
+  background: linear-gradient(1000deg, white, transparent);
+  animation: shoot 4s infinite ease-in;
 }
 
 .shooting-star:nth-child(1) {
